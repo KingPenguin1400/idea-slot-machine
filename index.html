@@ -3,52 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Palette from a Photo</title>
+    <title>Idea Slot Machine</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+
+    <div class="arcade-container">
         <header>
-            <h1>Palette from a Photo</h1>
-            <p>Drop an image to extract a professional color system.</p>
+            <h1>IDEA SLOT MACHINE</h1>
         </header>
 
-        <main>
-            <div id="dropzone">
-                <p>Drag & drop an image or <span class="bold">click to upload</span></p>
-                <input type="file" id="fileInput" accept="image/*" hidden>
+        <div class="machine">
+            <div class="reels-wrapper">
+                <!-- Reel 1 -->
+                <div class="reel-column">
+                    <div class="reel-header">AUDIENCE</div>
+                    <div id="reel-audience" class="reel-display">?</div>
+                    <div class="lock-container">
+                        <input type="checkbox" id="lock-audience" class="lock-toggle">
+                        <label for="lock-audience">LOCK</label>
+                    </div>
+                </div>
+
+                <!-- Reel 2 -->
+                <div class="reel-column">
+                    <div class="reel-header">PROBLEM</div>
+                    <div id="reel-problem" class="reel-display">?</div>
+                    <div class="lock-container">
+                        <input type="checkbox" id="lock-problem" class="lock-toggle">
+                        <label for="lock-problem">LOCK</label>
+                    </div>
+                </div>
+
+                <!-- Reel 3 -->
+                <div class="reel-column">
+                    <div class="reel-header">TWIST</div>
+                    <div id="reel-twist" class="reel-display">?</div>
+                    <div class="lock-container">
+                        <input type="checkbox" id="lock-twist" class="lock-toggle">
+                        <label for="lock-twist">LOCK</label>
+                    </div>
+                </div>
             </div>
 
-            <div id="results" class="hidden">
-                <div class="results-header">
-                    <div class="preview-container">
-                        <p>Original Image</p>
-                        <img id="imagePreview" src="" alt="Preview">
-                    </div>
-                    <div class="action-buttons">
-                        <button id="saveBtn" class="btn-secondary">Save Palette</button>
-                        <button id="newFileBtn" class="btn-primary">New File</button>
-                    </div>
-                </div>
-
-                <div class="palette-grid" id="paletteGrid">
-                    <!-- Colors will be injected here -->
-                </div>
-
-                <div class="mockup-container">
-                    <h2>Live Mockup Preview</h2>
-                    <div id="mockup" class="mockup-card">
-                        <h3 id="mockup-title">Experience the Future</h3>
-                        <p id="mockup-text">This is a live preview of your extracted palette. The background, text, and buttons are dynamically updated based on your photo's dominant colors.</p>
-                        <button id="mockup-btn">Get Started</button>
-                    </div>
-                    <div id="contrast-report"></div>
-                </div>
+            <div class="controls">
+                <button id="lever-btn" class="lever-button">PULL LEVER!</button>
+                <button id="save-btn" class="save-button">SAVE IDEA</button>
             </div>
-        </main>
+        </div>
+
+        <section class="vault">
+            <h2>THE VAULT</h2>
+            <div id="vault-list"></div>
+        </section>
     </div>
 
-    <canvas id="processingCanvas" style="display:none;"></canvas>
     <script src="script.js"></script>
 </body>
 </html>
