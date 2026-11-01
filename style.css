@@ -1,0 +1,135 @@
+:root {
+    --neon-pink: #ff00ff;
+    --neon-blue: #00f2ff;
+    --arcade-yellow: #fff000;
+    --dark-bg: #1a1a2e;
+    --border-thick: 6px;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin: 0;
+}
+
+.arcade-container {
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    color: var(--arcade-yellow);
+    text-shadow: 4px 4px 0px var(--neon-pink);
+    margin-bottom: 20px;
+}
+
+.machine {
+    background: #333;
+    border: var(--border-thick) solid #555;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 0px 0px #000;
+    margin-bottom: 50px;
+}
+
+.reels-wrapper {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.reel-column {
+    flex: 1;
+    background: #222;
+    border: 4px solid var(--neon-blue);
+    padding: 20px;
+    border-radius: 10px;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.reel-header {
+    font-size: 0.8rem;
+    color: var(--neon-blue);
+    margin-bottom: 10px;
+}
+
+.reel-display {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+}
+
+.lock-container {
+    margin-top: 15px;
+}
+
+.lock-toggle {
+    transform: scale(1.5);
+    cursor: pointer;
+}
+
+.lever-button {
+    padding: 30px 60px;
+    font-size: 2rem;
+    font-weight: bold;
+    background: var(--neon-pink);
+    color: white;
+    border: 4px solid white;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 0px #900;
+    transition: all 0.1s;
+}
+
+.lever-button:active {
+    transform: translateY(4px);
+    box-shadow: 0 4px 0px #900;
+}
+
+.save-button {
+    padding: 20px 40px;
+    font-size: 1.2rem;
+    background: var(--arcade-yellow);
+    border: 4px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Animation Class */
+.spinning {
+    animation: blurRotate 0.1s infinite;
+}
+
+@keyframes blurRotate {
+    0% { filter: blur(2px); transform: translateY(-5px); }
+    50% { filter: blur(10px); transform: translateY(5px); }
+    100% { filter: blur(2px); transform: translateY(-5px); }
+}
+
+.vault {
+    background: #222;
+    padding: 20px;
+    border: 2px dashed var(--neon-pink);
+    border-radius: 10px;
+}
+
+.vault-item {
+    background: #333;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 5px;
+}
